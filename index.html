@@ -13,7 +13,7 @@
   </head>
   <body>
     <header>
-      <button class="new-btn">
+      <button class="new-btn" id="toggle-btn">
         <div class="icon">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -42,30 +42,65 @@
     </header>
 
     <article id="main-container" class="main-container">
-      <div id="side-bar-left" class="side-bar-left"></div>
-      <div id="books-content" class="books-content">
-       <div class="btns-menu" id="btns-menu">
-        <button class="info-btn" id="info-btn" type="button">
-          <svg
-            class="a-s-fa-Ha-pa c-qd"
-            width="24px"
-            height="24px"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-          >
-            <path d="M0 0h24v24H0z" fill="none"></path>
-            <path
-              d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z"
-            ></path>
-          </svg>
-        </button>
+      <div id="side-bar-left" class="side-bar-left">
+        <!--START OF FORM-->
+        <form id="book-form" class="form-container" style="display: none">
+          <h2 class="form-title">Add a Book</h2>
+          <label for="title" class="form-label">Title</label>
+          <input
+            type="text"
+            id="title"
+            name="title"
+            required
+            class="form-input"
+          />
+          <label for="author" class="form-label">Author</label>
+          <input
+            type="text"
+            id="author"
+            name="author"
+            required
+            class="form-input"
+          />
+          <label for="pages" class="form-label">Pages</label>
+          <input
+            type="number"
+            id="pages"
+            name="pages"
+            required
+            class="form-input"
+          />
+          <div class="checkbox-wrapper">
+            <input type="checkbox" id="read" name="read" />
+            <label for="read" class="form-label">Read</label>
+          </div>
+          <button type="submit" class="form-btn">Add Book</button>
+        </form>
+        <!--END OF FORM-->
 
-        
       </div>
+      <div id="books-content" class="books-content">
+        <div class="btns-menu" id="btns-menu">
+          <button class="info-btn" id="info-btn" type="button">
+            <svg
+              class="a-s-fa-Ha-pa c-qd"
+              width="24px"
+              height="24px"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path d="M0 0h24v24H0z" fill="none"></path>
+              <path
+                d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z"
+              ></path>
+            </svg>
+          </button>
+          
+         
+          <div class="book-container" id="book-container"></div>
+        </div>
       </div>
-      <div class="side-bar-right" id="side-bar-right">
-        
-      </div>
+      <div class="side-bar-right" id="side-bar-right"></div>
     </article>
 
     <script src="script.js"></script>
