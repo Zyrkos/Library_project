@@ -123,12 +123,44 @@ h1 {
   height: 100vh;
   border-top-right-radius: 20px;
   border-top-left-radius: 20px;
-  display: grid;
+  display: flex;
   grid-template-rows: 50px auto;
   margin-right: 20px;
   min-width: 800px;
-
   padding: 10px;
+  flex-direction: column;
+}
+
+.books-content-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 50px;
+}
+
+.book-container-info {
+  height: 50px;
+}
+
+.book-card-information {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  gap: 20px;
+  
+}
+
+.book-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 60px;
+}
+
+.book-card-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .side-bar-left {

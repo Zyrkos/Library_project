@@ -77,33 +77,52 @@
           <button type="submit" class="form-btn">Add Book</button>
         </form>
         <!--END OF FORM-->
-
       </div>
       <div id="books-content" class="books-content">
-        <div class="btns-menu" id="btns-menu">
-          <button class="info-btn" id="info-btn" type="button">
-            <svg
-              class="a-s-fa-Ha-pa c-qd"
-              width="24px"
-              height="24px"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-            >
-              <path d="M0 0h24v24H0z" fill="none"></path>
-              <path
-                d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z"
-              ></path>
-            </svg>
-          </button>
-          
-         
-          <div class="book-container" id="book-container">
-            <div class="book">1</div>
-            <div class="book">2</div>
-            <div class="book">3</div>
-            <div class="book">4</div>
-            <div class="book">5</div>
-            <div class="book">6</div>
+        <div class="books-content-header">
+          <div class="My Disk">My Disk</div>
+          <div class="btns-menu" id="btns-menu">
+            <button class="info-btn" id="info-btn" type="button">
+              <svg
+                class="a-s-fa-Ha-pa c-qd"
+                width="24px"
+                height="24px"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path d="M0 0h24v24H0z" fill="none"></path>
+                <path
+                  d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="book-container" id="book-container">
+          <div class="book-container-info">
+            <p>sdadasdas</p>
+          </div>
+          <div class="book-card" id="book-card">
+            <div class="book-card-information" id="book-card-information">
+              <div class="book-title" id="book-title"><a>book title</a></div>
+              <div class="book-author" id="book-author">
+                <span>Author</span>
+              </div>
+              <div class="book-pages" id="book-pages"><span>600</span></div>
+            </div>
+            <div class="book-card-buttons" id="book-card-buttons">
+              <div class="read-status" id="read-status">
+                <input type="checkbox" id="checkbox" checked />
+                <label for="checkbox">Read</label>
+              </div>
+              <div class="delete-btn-div" id="delete-btn-div">
+                <button class="delete-btn" id="delete-btn"></button>
+              </div>
+              <div class="edit-btn-div" id="edit-btn-div">
+                <button class="edit-btn" id="edit-btn"></button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
