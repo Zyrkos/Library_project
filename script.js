@@ -87,14 +87,14 @@ function addBookToLibrary(book) {
     isReadElement.textContent = "Read";
   } else {
     isReadElement.classList.add("unread");
-    isReadElement.textContent = "Unread";
+    isReadElement.textContent = "Not Read";
   }
   newDiv.appendChild(isReadElement);
 
   isReadElement.addEventListener("click", function () {
     book.isRead = !book.isRead;
 
-    isReadElement.textContent = book.isRead ? "Read" : "Unread";
+    isReadElement.textContent = book.isRead ? "Read" : "Not Read";
 
     if (book.isRead) {
       isReadElement.classList.add("read");
@@ -131,7 +131,7 @@ form.addEventListener("submit", function (event) {
 
   bookForm.reset();
 
-  bookForm.style.display = "none"; // This makes the book form dissapear after adding a book
+  bookForm.style.display = "none"; // This makes the book form disappear after adding a book
 });
 
 toggleBtn.addEventListener("click", function () {
@@ -143,11 +143,13 @@ toggleBtn.addEventListener("click", function () {
 });
 
 infoBtn.addEventListener("click", function () {
-  sideBarRight.classList.toggle("deployed");
-
-  if (sideBarRight.classList.contains("deployed")) {
-    mainContainerGrid.style.gridTemplateColumns = "1fr 4fr 1fr";
+  if (sideBarRight.style.display === "block") {
+    mainContainerGrid.style.gridTemplateColumns = "1fr 4fr ";
+    sideBarRight.style.display = "none";
+    sideBarRight.classList.remove("deployed");
   } else {
-    mainContainerGrid.style.gridTemplateColumns = "1fr 4fr";
+    sideBarRight.style.display = "block";
+    mainContainerGrid.style.gridTemplateColumns = "1fr 4fr 1fr";
+    sideBarRight.classList.add("deployed");
   }
 });

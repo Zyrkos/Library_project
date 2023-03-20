@@ -127,19 +127,18 @@ h1 {
   grid-template-rows: 50px auto;
   margin-right: 20px;
   min-width: 800px;
-  
+
+  padding: 10px;
 }
 
 .side-bar-left {
-  background-color: ;
   height: 100vh;
   border-top-right-radius: 20px;
   border-top-left-radius: 20px;
   margin-right: 20px;
   max-width: 200px;
-  min-width: 200px;
-
-} 
+  min-width: 370px;
+}
 
 .side-bar-right {
   grid-column: 3 / 4;
@@ -150,9 +149,10 @@ h1 {
   margin-right: 20px;
   width: 300px;
   height: 100%;
-  transition: all 0.3s ease-out; 
+  transition: all 0.3s ease-out;
   transform: translateX(-100%);
   min-width: 200px;
+  display: none;
 }
 
 .side-bar-right.deployed {
@@ -200,7 +200,6 @@ h1 {
   position: relative;
   vertical-align: top;
 } */
-
 
 /* FORM STYLING */
 .form-container {
@@ -282,6 +281,11 @@ h1 {
 
 /* END OF FORM STYLING */
 
+.book {
+  width: 100%;
+  border-bottom: 2px solid black;
+  height: 50px;
+}
 
 @media screen and (max-width: 768px) {
   /* Add your responsive CSS styles here */
