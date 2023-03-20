@@ -56,63 +56,89 @@ function Library() {
 const library = new Library();
 
 function addBookToLibrary(book) {
-  // We create a separate function that adds new books to the library
   const newBookCard = document.createElement("div");
   newBookCard.classList.add("book-card");
+  newBookCard.setAttribute("id", "book-card");
 
-  const titleElement = document.createElement("h2");
+  const bookCardInformation = document.createElement("div");
+  bookCardInformation.classList.add("book-card-information");
+  bookCardInformation.setAttribute("id", "book-card-information");
+
+  const titleElement = document.createElement("div");
   titleElement.classList.add("book-title");
-  titleElement.textContent = book.title;
-  newBookCard.appendChild(titleElement);
+  titleElement.setAttribute("id", "book-title");
+  const titleLink = document.createElement("a");
+  titleLink.textContent = book.title;
+  titleElement.appendChild(titleLink);
+  bookCardInformation.appendChild(titleElement);
 
-  const authorElement = document.createElement("p");
+  const authorElement = document.createElement("div");
   authorElement.classList.add("book-author");
-  authorElement.textContent = book.author;
-  newBookCard.appendChild(authorElement);
+  authorElement.setAttribute("id", "book-author");
+  const authorSpan = document.createElement("span");
+  authorSpan.textContent = book.author;
+  authorElement.appendChild(authorSpan);
+  bookCardInformation.appendChild(authorElement);
 
-  const pagesElement = document.createElement("p");
+  const pagesElement = document.createElement("div");
   pagesElement.classList.add("book-pages");
-  pagesElement.textContent = book.pages;
-  newBookCard.appendChild(pagesElement);
+  pagesElement.setAttribute("id", "book-pages");
+  const pagesSpan = document.createElement("span");
+  pagesSpan.textContent = book.pages;
+  pagesElement.appendChild(pagesSpan);
+  bookCardInformation.appendChild(pagesElement);
 
-  const divName = "card-btns-div";
-  const newDiv = document.createElement("div");
-  newDiv.setAttribute("id", divName);
+  newBookCard.appendChild(bookCardInformation);
 
-  newBookCard.appendChild(newDiv);
+  const bookCardButtons = document.createElement("div");
+  bookCardButtons.classList.add("book-card-buttons");
+  bookCardButtons.setAttribute("id", "book-card-buttons");
 
-  const isReadElement = document.createElement("button");
-  if (book.isRead) {
-    isReadElement.classList.add("read");
-    isReadElement.textContent = "Read";
-  } else {
-    isReadElement.classList.add("unread");
-    isReadElement.textContent = "Not Read";
-  }
-  newDiv.appendChild(isReadElement);
+  const readStatusDiv = document.createElement("div");
+  readStatusDiv.classList.add("read-status");
+  readStatusDiv.setAttribute("id", "read-status");
 
-  isReadElement.addEventListener("click", function () {
-    book.isRead = !book.isRead;
+  const checkboxInput = document.createElement("input");
+  checkboxInput.setAttribute("type", "checkbox");
+  checkboxInput.setAttribute("id", "checkbox");
+  checkboxInput.checked = book.isRead;
+  readStatusDiv.appendChild(checkboxInput);
 
-    isReadElement.textContent = book.isRead ? "Read" : "Not Read";
+  const readLabel = document.createElement("label");
+  readLabel.setAttribute("for", "checkbox");
+  /* readLabel.textContent = book.isRead ? "Read" : "Not Read"; */
+  readStatusDiv.appendChild(readLabel);
 
-    if (book.isRead) {
-      isReadElement.classList.add("read");
-      isReadElement.classList.remove("unread");
-    } else {
-      isReadElement.classList.add("unread");
-      isReadElement.classList.remove("read");
-    }
-  });
+  bookCardButtons.appendChild(readStatusDiv);
+
+  const deleteBtnDiv = document.createElement("div");
+  deleteBtnDiv.classList.add("delete-btn-div");
+  deleteBtnDiv.setAttribute("id", "delete-btn-div");
 
   const deleteBtnElement = document.createElement("button");
-  deleteBtnElement.textContent = "Delete";
+  /* deleteBtnElement.textContent = ""; */
   deleteBtnElement.classList.add("delete-btn");
+  deleteBtnElement.setAttribute("id", "delete-btn");
   deleteBtnElement.addEventListener("click", () => {
     library.removeBook(book);
     bookContainer.removeChild(newBookCard);
   });
-  newDiv.appendChild(deleteBtnElement);
+
+  deleteBtnDiv.appendChild(deleteBtnElement);
+  bookCardButtons.appendChild(deleteBtnDiv);
+
+  const editBtnDiv = document.createElement("div");
+  editBtnDiv.classList.add("edit-btn-div");
+  editBtnDiv.setAttribute("id", "edit-btn-div");
+
+  const editBtnElement = document.createElement("button");
+  /* editBtnElement.textContent = "Edit"; */
+  editBtnElement.classList.add("edit-btn");
+  editBtnElement.setAttribute("id", "edit-btn");
+  editBtnDiv.appendChild(editBtnElement);
+  bookCardButtons.appendChild(editBtnDiv);
+
+  newBookCard.appendChild(bookCardButtons);
 
   return newBookCard;
 }
