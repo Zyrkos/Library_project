@@ -112,7 +112,7 @@ h1 {
   align-items: center;
   justify-content: center;
   grid-template-columns: 1fr 4fr;
-  
+
   grid-column: 2 / 3;
 }
 
@@ -123,9 +123,8 @@ h1 {
   border-top-right-radius: 20px;
   border-top-left-radius: 20px;
   display: grid;
-  grid-template-rows: 50px auto ;
-  margin-right: 20px; 
-  
+  grid-template-rows: 50px auto;
+  margin-right: 20px;
   
 }
 
@@ -146,21 +145,20 @@ h1 {
   border-top-right-radius: 20px;
   border-top-left-radius: 20px;
   margin-right: 20px;
-  
-  display: none;
-  /* position: fixed;
-  top: 0;
-  right: -300px;
   width: 300px;
   height: 100%;
-  
-  transition: all 0.3s ease-out; */
+  transition: all 0.3s ease-out; 
+  transform: translateX(-100%);
 }
 
-
+.side-bar-right.deployed {
+  /* styles when deployed */
+  transform: translateX(0);
+}
 
 .info-btn {
   display: inline-flex;
+  -webkit-tap-highlight-color: transparent;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
@@ -176,24 +174,9 @@ h1 {
   position: relative;
   vertical-align: top;
   background-color: transparent !important;
-
-  
-
-  /* border: 1px solid transparent; */
-  
-  
-  
-/*   -webkit-tap-highlight-color: transparent;
- */  
- 
- /*  overflow: visible; */
-  
-  /* color: var(--dt-on-surface,#3c4043); */
-  
 }
 
-
-.svg-button:hover {
+/* .svg-button:hover {
   border: 1px solid transparent;
   box-sizing: border-box;
   cursor: pointer;
@@ -201,18 +184,15 @@ h1 {
   margin: 0 8px;
   outline: none;
   -webkit-tap-highlight-color: transparent;
-  
+
   border-radius: 50%;
   min-width: 0;
   overflow: visible;
   height: 40px;
   width: 40px;
   border: none;
-  color: var(--dt-on-surface,#3c4043);
+  color: var(--dt-on-surface, #3c4043);
   padding: 0;
   position: relative;
   vertical-align: top;
-
-} 
-
-
+} */
