@@ -161,9 +161,19 @@ h1 {
 .book-card-information {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-around;
   gap: 20px;
-  width: 50%;
+  width: 70%;
+}
+
+.book-card-buttons {
+  
+  display: flex;
+  align-items: center;
+}
+
+.read-status {
+  margin-bottom: 4px;
 }
 
 .book-card {
@@ -190,6 +200,7 @@ h1 {
   align-self: flex-start;
   width: 50%;
 }
+
 
 .side-bar-left {
   height: 100vh;
