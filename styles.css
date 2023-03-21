@@ -146,6 +146,10 @@ h1 {
   flex-direction: column;
 }
 
+.book-container-info {
+  display: flex;
+}
+
 .books-content-header {
   display: flex;
   flex-direction: row;
@@ -155,8 +159,18 @@ h1 {
 
 .book-container-info {
   height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 20px;
+  width: 100%;
   border-bottom: 1px solid rgb(67, 67, 67);
 }
+
+.book-title-info {
+  width: 200px;
+}
+
 
 .book-card-information {
   display: flex;
@@ -167,13 +181,32 @@ h1 {
 }
 
 .book-card-buttons {
-  
+  width: 30%;
   display: flex;
-  align-items: center;
+  flex-direction: row;
+  
 }
 
 .read-status {
-  margin-bottom: 4px;
+  margin-right: auto;
+}
+
+
+.book-card-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  width: 30%;
+}
+
+.delete-btn-div {
+  
+  
+}
+
+.edit-btn-div {
+  
 }
 
 .book-card {
@@ -189,17 +222,15 @@ h1 {
   border-top: 1px solid rgb(67, 67, 67);
 }
 
-.book-card-buttons {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
+
 
 .book-title {
   display: flex;
   align-self: flex-start;
   width: 50%;
 }
+
+
 
 
 .side-bar-left {
